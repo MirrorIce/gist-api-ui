@@ -8,7 +8,9 @@ A SPA which allows ts users to enter a username and get the full list of public 
 3. filetypes for each gist file
 4. the content of each file
 ## Getting Started on playing with the app
-You can either use yarn start for the dev build or serve -s build for the built version
+You can either  
+- use yarn start for the dev version    
+- yarn build and then serve -s build for the build version 
 
 ## Design and Coding decisions
 
