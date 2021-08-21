@@ -20,7 +20,7 @@ The application is written in React. This allows to develop SPA's such as this a
 
 ### App Hierarchy  
   
-App.js    
+App    
 &nbsp;&nbsp;&nbsp;&nbsp;SearchBar  
 &nbsp;&nbsp;&nbsp;&nbsp;GistContainer  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gist(list)  
