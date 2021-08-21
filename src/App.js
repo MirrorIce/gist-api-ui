@@ -10,7 +10,7 @@ function App() {
   const [isUserFound, setUserFound] = useState(false);
   return (
     <div className="App">
-      <SearchBar pageNo = {pageNo} userGists = {userGists} setUserGists = {setUserGists} setUserFound = {setUserFound} user={user} setUser = {setUser}/>
+      <SearchBar setPageNo = {setPageNo} userGists = {userGists} setUserGists = {setUserGists} setUserFound = {setUserFound} user={user} setUser = {setUser}/>
       {(isUserFound===true)?<GistContainer pageNo = {pageNo} setPageNo = {setPageNo} userGists = {userGists} setUserGists = {setUserGists} setUserFound = {setUserFound} user = {user} />:null}
     </div>
   );

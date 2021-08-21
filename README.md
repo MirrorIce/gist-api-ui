@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# Gist UI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+A SPA which allows ts users to enter a username and get the full list of public Gists for that user by using the API provided by Github Gist API. Based on the search, it will reveal the gists and details for each gist, such as: 
+1. gist description 
+2. latest forks
+3. filetypes for each gist file
+4. the content of each file
+## Getting Started on playing with the app
+You can either use yarn start for the dev build or serve -s build for the built version
 
-In the project directory, you can run:
+## Design and Coding decisions
 
-### `yarn start`
+### Framework
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The application is written in React. This allows to develop SPA's such as this app with relative ease and flexibility.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### App Hierarchy  
+  
+App.js    
+&nbsp;&nbsp;&nbsp;&nbsp;SearchBar  
+&nbsp;&nbsp;&nbsp;&nbsp;GistContainer  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gist(list)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FileContainer  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PageCounter  
 
-### `yarn test`
+### Short Description of app hierarchy  
+  
+1. App -> container for all the functionality. Also, this container has the majority of the states used withing the application, namely: user, userGists, pageNo, isUserFound 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. SearchBar -> component for the user input handling  
 
-### `yarn build`
+3. GistContainer -> wrapper for the search result  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. Gist -> component used for displaying gists (description, forks and files). There might be multiple Gist components in a GistContainer  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+5. FileContainer -> component used for displaying the file details(name, language and code). Might be used multiple times on the same Gist component
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+6. PageCounter -> used for enabling the user to set the page number query. This component also handles the fetching of gists after the page number was updated.
 
-### `yarn eject`
+### States
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. user -> used to store the input typed in the search bar
+2. userGists -> used to store the found gists, based on the gist user and page number
+3. pageNo -> page number for the query
+4. isUserFound -> state for telling whether a gist user was found or not  
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Technical decisions
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### States  
+Most of the states which are used in this app are found in the parent component (App). The reason for this is that all the children need in a way or another the state values and having to rely on a child's state, instead of passing from parent to child and back would increase the implementation difficulty.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### Queries
 
-## Learn More
+The gists' number of queries per page was limited to 10, which is more of an empirical number. But, emphasis should be taken on the fact that the number of queries is limited in order to minimise network traffic and number of queries.  
+  
+More than that, this decision was also taken for the displaying of forks and files. Therefore, instead of loading the code and latest forks for each query (10 gists), the app will load only the specific files and forks which the user wants to see. As a result, there are less API calls.  
+  
+This decision was taken as an adaptation to the API, which only allows to fetch the forks and file contents based on additional API calls.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Styling
+  
+Flex was used because of the more "linear" design of the app.
 
-### Code Splitting
+### Further improvements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Use Redux for state management. This would allow for a more separate, readable code
+- Allow the user to choose the number of gists to be displayed per page, but by limiting the maximum number possible
+- Find a way to query the total number of gists and forks and display them;
+- Add the possibility to change page number with an input (aside from incremental/decremental buttons). The previous mentioned feature is needed
+- Better styling
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

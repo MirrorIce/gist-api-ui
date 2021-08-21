@@ -11,7 +11,7 @@ export default class SearchBar extends Component {
         //Fetch all the gists made by the user and store in a variable
         //The API only allows a per page approach, with a limited number of results (we cannot fetch all the results directly)
         //We download only by a per page basis to limit calls and traffic
-        let pageNo = this.props.pageNo;
+        let pageNo = 1;
         const pageSize = 10;
         fetch(`https://api.github.com/users/${this.state.userSearchInput}/gists?per_page=${pageSize.toString()}&page=${pageNo.toString()}`)
         .then((res) =>{
@@ -42,6 +42,7 @@ export default class SearchBar extends Component {
                 this.props.setUserGists([]);
                 this.props.setUserFound(false);
             }
+            this.props.setPageNo(1);
         })
         
 
