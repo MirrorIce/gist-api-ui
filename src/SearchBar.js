@@ -49,7 +49,7 @@ export default class SearchBar extends Component {
     }
     render() {
         return (
-            <div>
+            <div className = "SearchBar">
                 <input onChange = {this.setUserSearchInput} value = {this.state.userSearchInput} type = 'text'></input>
                 <button onClick = {this.searchUserGists}>Search</button>
             </div>

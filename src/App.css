@@ -1,13 +1,89 @@
-.App {
-  text-align: center;
-}
 
+.SearchBar{
+  margin:0 auto;
+  width:fit-content;
+}
 .GistContainer{
   display:flex;
   flex-direction: column;
+  width:50%;
+  margin: 0 auto;
+}
+
+.GistContainer h4{
+  margin:0;
+  padding:0;
 }
 
 .PageCounter{
   display:flex;
   flex-direction:row;
 }
+
+.Gist{
+  margin-top:15px;
+  padding:5px;
+}
+
+.FileContainer{
+  display:flex;
+  flex-direction: column;
+  margin-top:5px;
+}
+.GistContainer .Gist:nth-child(even)
+{
+  background:white;
+}
+.GistContainer .Gist:nth-child(odd)
+{
+  background:rgb(231, 231, 231);
+}
+/*Start of Styling for the file names, extension type and forks */
+.FileContainer div{
+  display:flex;
+  flex-direction: row;
+  margin:0;
+}
+
+.FileContainer div p{
+  margin:0;
+  margin-left:5px;
+  padding:5px;
+}
+
+.FileContainer div p:nth-child(2){
+  margin-left:5px;
+  background:lightgreen;
+  padding:5px;
+  border-radius:15px;
+}
+.PageCounter{
+  margin:0 auto;
+}
+/*End of Styling for the file names, extension type and forks */
+
+/*Start of Styling for the view code button and code container*/
+.FileContainer p{
+  margin:0;
+  margin-left:5px;
+  padding:5px;
+}
+
+.FileContainer button{
+  margin:0;
+  margin-left:5px;
+  padding:5px;
+  width:fit-content;
+  background:lightblue;
+  border:none;
+  padding:10px;
+  border-radius:15px;
+}
+
+.FileContainer pre
+{
+  background:rgb(255, 255, 255);
+  overflow: scroll;
+}
+
+/*End of Styling for the view code button and code container*/

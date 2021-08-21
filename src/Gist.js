@@ -45,8 +45,9 @@ export default class Gist extends Component {
     }
     render() {
         return (
-            <div>
+            <div className = "Gist">
                 <h4>{this.props.userGist.description}</h4>
+                <p>Latest forks: click to show</p>
                 {this.state.files.map((file,idx) =>{
                     return <FileContainer file = {this.state.files[idx]} key = {idx}/>
                 })}
