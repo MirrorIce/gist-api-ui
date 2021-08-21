@@ -53,22 +53,22 @@ Most of the states which are used in this app are found in the parent component 
 
 #### Queries
 
-The gists' number of queries per page was limited to 10, which is more of an empirical number. But, emphasis should be taken on the fact that the number of queries is limited in order to minimise network traffic and number of queries.  
+The gists' number of queries per page was limited to 10, which is more of an empirical number. But, emphasis should be put on the fact that the number of queries is limited in order to minimise network traffic and number of queries.  
   
-More than that, this decision was also taken for the displaying of forks and files. Therefore, instead of loading the code and latest forks for each query (10 gists), the app will load only the specific files and forks which the user wants to see. As a result, there are less API calls.  
+More than that, this approach was also taken for the displaying of forks and files. Therefore, instead of loading the code and latest forks for each query (10 gists), the app will load only the specific files and forks which the user wants to see. As a result, there are less API calls.  
   
-This decision was taken as an adaptation to the API, which only allows to fetch the forks and file contents based on additional API calls.
+This decision was made as an adaptation to the API, which only allows to fetch the forks and file contents based on additional API calls.
 
 
 #### Styling
   
-Flex was used because of the more "linear" design of the app.
+Flex is used because of the more "linear" design of the app.
 
-### Further improvements
+## Further improvements
 
 - Use Redux for state management. This would allow for a more separate, readable code
 - Allow the user to choose the number of gists to be displayed per page, but by limiting the maximum number possible
 - Find a way to query the total number of gists and forks and display them;
-- Add the possibility to change page number with an input (aside from incremental/decremental buttons). The previous mentioned feature is needed
+- Add the possibility to change pages with a number input. The previous mentioned feature is needed
 - Better styling
 
