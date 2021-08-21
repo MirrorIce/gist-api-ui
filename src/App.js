@@ -4,13 +4,14 @@ import GistContainer from './GistContainer';
 import {useState} from "react";
 
 function App() {
-  const [userGists, setUserGists] = useState([]);
-  const [pageNo, setPageNo] = useState(0);
+  const [user,setUser] = useState([]);
+  const [userGists, setUserGists] = useState("");
+  const [pageNo, setPageNo] = useState(1);
   const [isUserFound, setUserFound] = useState(false);
   return (
     <div className="App">
-      <SearchBar pageNo = {pageNo} userGists = {userGists} setUserGists = {setUserGists} setUserFound = {setUserFound}/>
-      {(isUserFound===true)?<GistContainer pageNo = {pageNo} setPageNo = {setPageNo} userGists = {userGists} />:null}
+      <SearchBar pageNo = {pageNo} userGists = {userGists} setUserGists = {setUserGists} setUserFound = {setUserFound} user={user} setUser = {setUser}/>
+      {(isUserFound===true)?<GistContainer pageNo = {pageNo} setPageNo = {setPageNo} userGists = {userGists} setUserGists = {setUserGists} setUserFound = {setUserFound} user = {user} />:null}
     </div>
   );
 }

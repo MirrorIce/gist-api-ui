@@ -1,34 +1,64 @@
 
+/*Start of Styling for the search bar*/
 .SearchBar{
   margin:0 auto;
+  margin-top:25px;
   width:fit-content;
 }
+
+.SearchBar input{
+  font-size:20px;
+  border:1px solid lightgray;
+  padding:5px;
+}
+.SearchBar button{
+  margin:0;
+  padding:6px;
+  width:fit-content;
+  background:lightblue;
+  border:none;
+  font-size:20px;
+}
+/*End of Styling for the search bar*/
 .GistContainer{
   display:flex;
   flex-direction: column;
   width:50%;
   margin: 0 auto;
+  margin-top:15px;
+  border:1px solid lightgray;
 }
 
 .GistContainer h4{
   margin:0;
   padding:0;
+  margin-left:5px;
 }
-
+/*Start of Styling for the page counter buttons and counter display*/
 .PageCounter{
   display:flex;
   flex-direction:row;
 }
 
-.Gist{
-  margin-top:15px;
-  padding:5px;
+.PageCounter button{
+  margin:0;
+  background:lightblue;
+  border:none;
+  border-radius:50%;
+  width:50px;
+  height:50px;
+  font-size:25px;
 }
 
-.FileContainer{
-  display:flex;
-  flex-direction: column;
-  margin-top:5px;
+.PageCounter p{
+  margin:0;
+  padding:5px;
+  font-size:25px;
+}
+/*End of Styling for the page counter buttons*/
+/*Start of Styling for the gists, forks and show fork button*/
+.Gist{
+  padding:0px 5px 5px 0px; 
 }
 .GistContainer .Gist:nth-child(even)
 {
@@ -38,7 +68,32 @@
 {
   background:rgb(231, 231, 231);
 }
+.Gist h4{
+  margin-bottom:15px;
+  margin-top:10px;
+}
+.Gist button{
+  margin:0;
+  margin-left:5px;
+  padding:5px;
+  width:fit-content;
+  background:lightblue;
+  border:none;
+  padding:5px;
+  border-radius:15px;
+}
+.Gist p{
+  margin-left:5px;
+}
+/*End of Styling for the gists, forks and show fork button*/
+
 /*Start of Styling for the file names, extension type and forks */
+.FileContainer{
+  display:flex;
+  flex-direction: column;
+  margin-top:5px;
+}
+
 .FileContainer div{
   display:flex;
   flex-direction: row;
@@ -49,6 +104,7 @@
   margin:0;
   margin-left:5px;
   padding:5px;
+  padding-left:0px;
 }
 
 .FileContainer div p:nth-child(2){
@@ -76,14 +132,14 @@
   width:fit-content;
   background:lightblue;
   border:none;
-  padding:10px;
+  padding:5px;
   border-radius:15px;
 }
 
 .FileContainer pre
 {
   background:rgb(255, 255, 255);
-  overflow: scroll;
+  overflow: auto;
 }
 
 /*End of Styling for the view code button and code container*/
