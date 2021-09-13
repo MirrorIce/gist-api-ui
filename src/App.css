@@ -1,4 +1,10 @@
-
+:root{
+  --card-bg-color: #F0F6F6;
+  --button-text-color:#F0F6F6;
+  --button: #0CA4A5;
+  --file-type: #415D43;
+  --text-color: #0F0A0A;
+}
 /*Start of Styling for the search bar*/
 .SearchBar{
   margin:0 auto;
@@ -8,16 +14,34 @@
 
 .SearchBar input{
   font-size:20px;
-  border:1px solid lightgray;
+  border:none;
+  outline:none;
   padding:5px;
+  box-shadow:0px 0px 2px var(--button);
+  transition:.5s ease box-shadow;
 }
+
+.SearchBar input:focus{
+  font-size:20px;
+  border:none;
+  outline:none;
+  padding:5px;
+  box-shadow:0px 0px 10px var(--button);
+}
+
 .SearchBar button{
   margin:0;
   padding:6px;
   width:fit-content;
-  background:lightblue;
+  background:var(--button);
+  color:var(--button-text-color);
   border:none;
   font-size:20px;
+  transition:.5s ease all;
+}
+
+.SearchBar button:hover{
+  box-shadow:2px 0px 10px 1px var(--button);
 }
 /*End of Styling for the search bar*/
 .GistContainer{
@@ -25,14 +49,15 @@
   flex-direction: column;
   width:50%;
   margin: 0 auto;
-  margin-top:15px;
-  border:1px solid lightgray;
+  margin-top:25px;
+  margin-bottom:25px;
+  box-shadow:0px 0px 25px var(--card-bg-color);
 }
 
 .GistContainer h4{
-  margin:0;
-  padding:0;
-  margin-left:5px;
+  margin:0 auto;
+  padding:0px;
+  width:fit-content;
 }
 /*Start of Styling for the page counter buttons and counter display*/
 .PageCounter{
@@ -42,7 +67,8 @@
 
 .PageCounter button{
   margin:0;
-  background:lightblue;
+  background:var(--button);
+  color:var(--button-text-color);
   border:none;
   border-radius:50%;
   width:50px;
@@ -66,7 +92,7 @@
 }
 .GistContainer .Gist:nth-child(odd)
 {
-  background:rgb(231, 231, 231);
+  background:var(--card-bg-color);
 }
 .Gist h4{
   margin-bottom:15px;
@@ -74,10 +100,12 @@
 }
 .Gist button{
   margin:0;
-  margin-left:5px;
+  margin-left:15px;
+  margin-top:10px;
   padding:5px;
   width:fit-content;
-  background:lightblue;
+  background:var(--button);
+  color:var(--button-text-color);
   border:none;
   padding:5px;
   border-radius:15px;
@@ -102,14 +130,15 @@
 
 .FileContainer div p{
   margin:0;
-  margin-left:5px;
+  margin-left:15px;
   padding:5px;
   padding-left:0px;
 }
 
 .FileContainer div p:nth-child(2){
   margin-left:5px;
-  background:lightgreen;
+  background:var(--file-type);
+  color:var(--button-text-color);
   padding:5px;
   border-radius:15px;
 }
@@ -121,16 +150,19 @@
 /*Start of Styling for the view code button and code container*/
 .FileContainer p{
   margin:0;
-  margin-left:5px;
+  margin-left:15px;
   padding:5px;
 }
 
 .FileContainer button{
   margin:0;
-  margin-left:5px;
+  margin-left:15px;
+  margin-top:25px;
+  margin-bottom:15px;
   padding:5px;
   width:fit-content;
-  background:lightblue;
+  background:var(--button);
+  color:var(--button-text-color);
   border:none;
   padding:5px;
   border-radius:15px;
@@ -140,6 +172,7 @@
 {
   background:rgb(255, 255, 255);
   overflow: auto;
+  margin:0;
 }
 
 /*End of Styling for the view code button and code container*/
